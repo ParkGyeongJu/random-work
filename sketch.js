@@ -31,6 +31,13 @@ class Walker {
   
   display() {
     //display walker
-	ellipse(this.x, this.y, this.w);
+    fill(255);
+	ellipse(mouseX, mouseY, this.w*random(1,2));
+    ellipse(mouseX+10,mouseY+10,this.w);
+    ellipse(mouseX-10,mouseY+10,this.w);
+    ellipse(mouseX-10,mouseY-10,this.w);
+    ellipse(mouseX+10,mouseY-10,this.w);
+    fill(0);
+    ellipse(mouseX,mouseY-5,this.w*2);
   }
 }
