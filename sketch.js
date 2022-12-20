@@ -1,9 +1,11 @@
+let img;
 let ball;
 
 
 function setup() {
   createCanvas(400, 400); 
   ball = new Walker();
+  img = loadImage('mo.png');
 }
 
 
@@ -11,6 +13,7 @@ function draw() {
   background(220, 5);
   ball.update();
   ball.display();
+
 }
 
 
@@ -31,13 +34,6 @@ class Walker {
   
   display() {
     //display walker
-    fill(255);
-	ellipse(mouseX, mouseY, this.w*random(1,2));
-    ellipse(mouseX+10,mouseY+10,this.w);
-    ellipse(mouseX-10,mouseY+10,this.w);
-    ellipse(mouseX-10,mouseY-10,this.w);
-    ellipse(mouseX+10,mouseY-10,this.w);
-    fill(0);
-    ellipse(mouseX,mouseY-5,this.w*2);
+    image(img, mouseX, mouseY, img.width / 4, img.height / 4);
   }
 }
