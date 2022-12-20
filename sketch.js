@@ -1,6 +1,5 @@
-let img;
-let ball;
 
+let ball;
 
 function setup() {
   createCanvas(400, 400); 
@@ -10,7 +9,7 @@ function setup() {
 
 
 function draw() {
-  background(220, 5);
+  
   ball.update();
   ball.display();
 
@@ -34,6 +33,11 @@ class Walker {
   
   display() {
     //display walker
-    image(img, mouseX, mouseY, img.width / 4, img.height / 4);
-  }
+    if(mouseIsPressed){
+      background(240,230,140);
+    }else{
+      background(100, 5);
+    }
+    image(img, mouseX/2, mouseY/2, img.width / 4, img.height / 4);
+ }
 }
